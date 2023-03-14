@@ -35,8 +35,8 @@ export default function App() {
         loginFields,
         config
       )
-      .then((response) => {
-        console.log(response.data);
+      .then((response:Object) => {
+        console.log(response);
       })
       .catch((error) => console.log('zorttt', error));
   };
@@ -66,11 +66,10 @@ export default function App() {
       />
       <StatusBar style='auto' />
       <Button title='Enter' color='#f5a623' onPress={handleSubmit} />
-      <Button
-        title='Sign Up!'
-        color='#f5a623'
+      <Text
+        style={styles.textColor}
         onPress={() => Alert.alert('Simple Button pressed')}
-      />
+      >Sign Up!</Text>
     </SafeAreaView>
   );
 }
@@ -100,6 +99,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
   },
+  textColor:{color:'#f5a623'},
   logo: {
     width: 100,
     height: 100,
