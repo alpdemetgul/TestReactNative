@@ -1,93 +1,95 @@
 import Login from "./Login";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { MainPage } from "./Main";
-import { DefaultTheme  } from '@react-navigation/native';
-import { useColorScheme,Button,Modal, View, Pressable, Alert, StyleSheet,Switch } from 'react-native';
-import { useState } from 'react';
-// import Icon from 'react-native-vector-icons/FontAwesome';
-
-
-
-
-
-const MyTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: 'rgb(255, 45, 85)',
-  },
-};
+import { useTheme } from "@react-navigation/native";
+import {
+  useColorScheme,
+  Button,
+  Modal,
+  View,
+  Alert,
+  StyleSheet,
+  Switch,
+} from "react-native";
+import { useState } from "react";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function Routes() {
-
   const scheme = useColorScheme();
+  const { colors } = useTheme();
+  const styles = makeStyles(colors);
   const Stack = createNativeStackNavigator();
   console.log(scheme);
   const [modalVisible, setModalVisible] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
 
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   return (
     <>
-    <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen name="Login" component={Login} options={{
-          headerRight: () => (
-            <Button
-              onPress={() =>setModalVisible(true) }
-              title="Info"
-              color="#fff"
-            />
-          ),
-        }}   />
-      <Stack.Screen name="MainPage" component={MainPage} />
-    </Stack.Navigator>  
-    <Modal
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerRight: () => (
+              <Icon
+                onPress={() => setModalVisible(true)}
+                name="cog"
+                style={styles.text}
+                size={18}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen name="MainPage" component={MainPage} />
+      </Stack.Navigator>
+      <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
+          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
-        }}>
+        }}
+      >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-          <Switch
-        trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-          <Switch
-        trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-      <Button title="Exit"  onPress={()=>setModalVisible(false)}/>
+            <Switch
+              trackColor={{ false: "#767577", true: "#81b0ff" }}
+              thumbColor={isEnabled ? "#f5a623" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+
+            <Button
+              title="Exit"
+              // color="primary"
+              onPress={() => setModalVisible(false)}
+            />
           </View>
         </View>
       </Modal>
     </>
-    );
+  );
 }
 
-const styles = StyleSheet.create({
+const makeStyles = (colors: any) =>
+  StyleSheet.create({
     centeredView: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
       marginTop: 22,
     },
     modalView: {
       margin: 20,
-      backgroundColor: 'white',
+      backgroundColor: colors.background,
       borderRadius: 20,
       padding: 35,
-      alignItems: 'center',
-      shadowColor: '#000',
+      alignItems: "center",
+      shadowColor: "#000",
       shadowOffset: {
         width: 0,
         height: 2,
@@ -102,20 +104,19 @@ const styles = StyleSheet.create({
       elevation: 2,
     },
     buttonOpen: {
-      backgroundColor: '#F194FF',
+      backgroundColor: "#F194FF",
     },
     buttonClose: {
-      backgroundColor: '#2196F3',
+      backgroundColor: "#2196F3",
     },
     textStyle: {
-      color: 'white',
-      fontWeight: 'bold',
-      textAlign: 'center',
+      color: "white",
+      fontWeight: "bold",
+      textAlign: "center",
     },
+    text: { color: colors.text },
     modalText: {
       marginBottom: 15,
-      textAlign: 'center',
+      textAlign: "center",
     },
   });
-
-
