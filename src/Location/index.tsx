@@ -36,9 +36,13 @@ const Location = () => {
 
   return (
     <View style={{ backgroundColor: 'gray', flex: 1 }}>
-      <Text>{text}</Text>
       <View style={{ backgroundColor: 'red', flex: 1 }}>
-        <MapView initialRegion={region} style={styles.map} />
+        <MapView
+          showsUserLocation
+          followsUserLocation
+          style={styles.map}
+          userLocationPriority='high'
+        />
       </View>
     </View>
   );
