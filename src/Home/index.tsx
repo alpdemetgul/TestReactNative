@@ -17,6 +17,7 @@ const Home = ({ navigation: { navigate } }) => {
       <Button title='Mic' onPress={() => navigate('Mic')} />
       <Button title='FileUpload' onPress={() => navigate('FileUpload')} />
       <Button title='Share' onPress={() => navigate('Share')} />
+      <Button title='Location' onPress={() => navigate('Location')} />
     </View>
   );
 };

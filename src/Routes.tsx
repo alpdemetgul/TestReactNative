@@ -17,6 +17,7 @@ import Mic from './Mic';
 import FileUpload from './FileUpload';
 import Share from './Share';
 import Cam from './Cam';
+import Location from './Location';
 
 export default function Routes() {
   const scheme = useColorScheme();
@@ -37,6 +38,7 @@ export default function Routes() {
         <Stack.Screen name='Mic' component={Mic} />
         <Stack.Screen name='FileUpload' component={FileUpload} />
         <Stack.Screen name='Share' component={Share} />
+        <Stack.Screen name='Location' component={Location} />
         {/* <Stack.Screen
           name="Login"
           component={Login}
