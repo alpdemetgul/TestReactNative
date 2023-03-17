@@ -13,10 +13,10 @@ import {
 } from 'react-native';
 import { useState } from 'react';
 import Home from './Home';
-import Camera from './Camera';
 import Mic from './Mic';
 import FileUpload from './FileUpload';
 import Share from './Share';
+import Cam from './Cam';
 
 export default function Routes() {
   const scheme = useColorScheme();
@@ -33,7 +33,7 @@ export default function Routes() {
     <>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='Camera' component={Camera} />
+        <Stack.Screen name='Camera' component={Cam} />
         <Stack.Screen name='Mic' component={Mic} />
         <Stack.Screen name='FileUpload' component={FileUpload} />
         <Stack.Screen name='Share' component={Share} />
