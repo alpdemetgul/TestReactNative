@@ -102,10 +102,14 @@ const Cam = () => {
             />
           </View>
           <View
-            style={{ position: 'absolute', top: '5%', right: '5%', gap: 20 }}
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'flex-end',
+              gap: 20,
+            }}
           >
             <CameraButton
-              // title={`Take a picture`}
               icon='retweet'
               onPress={() => {
                 setType(
@@ -114,13 +118,12 @@ const Cam = () => {
               }}
             />
             <CameraButton
-              // title={`Take a picture`}
               icon='flash'
               onPress={() => {
                 setFlash(
-                  flash === Camera.Constants.FlashMode.off
+                  flash === Camera.Constants.FlashMode.torch
                     ? Camera.Constants.FlashMode.on
-                    : Camera.Constants.FlashMode.off
+                    : Camera.Constants.FlashMode.torch
                 );
               }}
             />
@@ -150,8 +153,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   camera: {
-    // flex: 1,
-    height: 500
+    height: 500,
+    display: 'flex',
+    flexDirection: 'column-reverse',
   },
   image: {
     flex: 9,
