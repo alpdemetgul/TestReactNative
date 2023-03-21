@@ -10,18 +10,6 @@ import {
   Alert,
   StyleSheet,
   Switch,
-} from "react-native";
-import { useState } from "react";
-import Home from "./Home";
-import Mic from "./Mic";
-import FileUpload from "./FileUpload";
-import Share from "./Share";
-import Cam from "./Cam";
-import Location from "./Location";
-import { CopyText } from "./CopyText";
-import { Horizontal } from "./Horizontal";
-import { Auth } from "./Auth";
-import { LinkingTest } from "./Linking/Linking";
 } from 'react-native';
 import { useState } from 'react';
 import Home from './Home';
@@ -31,8 +19,10 @@ import Share from './Share';
 import Cam from './Cam';
 import Location from './Location';
 import { CopyText } from './CopyText';
+import { Horizontal } from './Horizontal';
+import { Auth } from './Auth';
+import { LinkingTest } from './Linking/Linking';
 import Autofill from './Autofill';
-import Mail from './Mail';
 import RememberMe from './RememberMe';
 
 export default function Routes() {
@@ -58,9 +48,9 @@ export default function Routes() {
         <Stack.Screen name='CopyText' component={CopyText} />
         <Stack.Screen name='Autofill' component={Autofill} />
         <Stack.Screen name='RememberMe' component={RememberMe} />
-        <Stack.Screen name="Horizontal" component={Horizontal} />
-        <Stack.Screen name="Auth" component={Auth} />
-        <Stack.Screen name="LinkingTest" component={LinkingTest} />
+        <Stack.Screen name='Horizontal' component={Horizontal} />
+        <Stack.Screen name='Auth' component={Auth} />
+        <Stack.Screen name='LinkingTest' component={LinkingTest} />
 
         {/* <Stack.Screen
           name="Login"
