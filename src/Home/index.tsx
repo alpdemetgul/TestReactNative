@@ -19,6 +19,9 @@ const Home = ({ navigation: { navigate } }) => {
       <Button title="Share" onPress={() => navigate("Share")} />
       <Button title="Location" onPress={() => navigate("Location")} />
       <Button title="CopyText" onPress={() => navigate("CopyText")} />
+      <Button title="Horizontal" onPress={() => navigate("Horizontal")} />
+      <Button title="Auth" onPress={() => navigate("Auth")} />
+      <Button title="LinkingTest" onPress={() => navigate("LinkingTest")} />
     </View>
   );
 };
