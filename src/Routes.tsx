@@ -24,6 +24,8 @@ import { Auth } from './Auth';
 import { LinkingTest } from './Linking/Linking';
 import Autofill from './Autofill';
 import RememberMe from './RememberMe';
+import BioLogin from './BioLogin';
+import TestMain from './BioLogin/TestMain';
 
 export default function Routes() {
   const scheme = useColorScheme();
@@ -51,6 +53,8 @@ export default function Routes() {
         <Stack.Screen name='Horizontal' component={Horizontal} />
         <Stack.Screen name='Auth' component={Auth} />
         <Stack.Screen name='LinkingTest' component={LinkingTest} />
+        <Stack.Screen name='BioLogin' component={BioLogin} />
+        <Stack.Screen name='TestMain' component={TestMain} />
 
         {/* <Stack.Screen
           name="Login"

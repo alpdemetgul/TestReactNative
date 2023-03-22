@@ -24,6 +24,7 @@ const Home = ({ navigation: { navigate } }) => {
       <Button title="Horizontal" onPress={() => navigate("Horizontal")} />
       <Button title="Auth" onPress={() => navigate("Auth")} />
       <Button title="LinkingTest" onPress={() => navigate("LinkingTest")} />
+      <Button title="BioLogin" onPress={() => navigate("BioLogin")} />
     </View>
   );
 };
