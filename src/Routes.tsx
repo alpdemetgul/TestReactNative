@@ -103,7 +103,7 @@ export default function Routes() {
   );
 }
 
-const makeStyles = (colors: any) =>
+const makeStyles = (colors: Object) =>
   StyleSheet.create({
     centeredView: {
       flex: 1,
