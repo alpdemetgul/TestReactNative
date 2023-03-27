@@ -1,7 +1,7 @@
-import Login from "./Login";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { MainPage } from "./Main";
-import { useTheme } from "@react-navigation/native";
+import Login from './Login';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { MainPage } from './Main';
+import { useTheme } from '@react-navigation/native';
 import {
   useColorScheme,
   Button,
@@ -10,18 +10,22 @@ import {
   Alert,
   StyleSheet,
   Switch,
-} from "react-native";
-import { useState } from "react";
-import Home from "./Home";
-import Mic from "./Mic";
-import FileUpload from "./FileUpload";
-import Share from "./Share";
-import Cam from "./Cam";
-import Location from "./Location";
-import { CopyText } from "./CopyText";
-import { Horizontal } from "./Horizontal";
-import { Auth } from "./Auth";
-import { LinkingTest } from "./Linking/Linking";
+} from 'react-native';
+import { useState } from 'react';
+import Home from './Home';
+import Mic from './Mic';
+import FileUpload from './FileUpload';
+import Share from './Share';
+import Cam from './Cam';
+import Location from './Location';
+import { CopyText } from './CopyText';
+import { Horizontal } from './Horizontal';
+import { Auth } from './Auth';
+import { LinkingTest } from './Linking/Linking';
+import Autofill from './Autofill';
+import RememberMe from './RememberMe';
+import BioLogin from './BioLogin';
+import TestMain from './BioLogin/TestMain';
 
 export default function Routes() {
   const scheme = useColorScheme();
@@ -36,17 +40,21 @@ export default function Routes() {
 
   return (
     <>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Camera" component={Cam} />
-        <Stack.Screen name="Mic" component={Mic} />
-        <Stack.Screen name="FileUpload" component={FileUpload} />
-        <Stack.Screen name="Share" component={Share} />
-        <Stack.Screen name="Location" component={Location} />
-        <Stack.Screen name="CopyText" component={CopyText} />
-        <Stack.Screen name="Horizontal" component={Horizontal} />
-        <Stack.Screen name="Auth" component={Auth} />
-        <Stack.Screen name="LinkingTest" component={LinkingTest} />
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen name='Camera' component={Cam} />
+        <Stack.Screen name='Mic' component={Mic} />
+        <Stack.Screen name='FileUpload' component={FileUpload} />
+        <Stack.Screen name='Share' component={Share} />
+        <Stack.Screen name='Location' component={Location} />
+        <Stack.Screen name='CopyText' component={CopyText} />
+        <Stack.Screen name='Autofill' component={Autofill} />
+        <Stack.Screen name='RememberMe' component={RememberMe} />
+        <Stack.Screen name='Horizontal' component={Horizontal} />
+        <Stack.Screen name='Auth' component={Auth} />
+        <Stack.Screen name='LinkingTest' component={LinkingTest} />
+        <Stack.Screen name='BioLogin' component={BioLogin} />
+        <Stack.Screen name='TestMain' component={TestMain} />
 
         {/* <Stack.Screen
           name="Login"
@@ -99,8 +107,8 @@ const makeStyles = (colors: Object) =>
   StyleSheet.create({
     centeredView: {
       flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: 'center',
+      alignItems: 'center',
       marginTop: 22,
     },
     modalView: {
@@ -108,8 +116,8 @@ const makeStyles = (colors: Object) =>
       backgroundColor: colors.background,
       borderRadius: 20,
       padding: 35,
-      alignItems: "center",
-      shadowColor: "#000",
+      alignItems: 'center',
+      shadowColor: '#000',
       shadowOffset: {
         width: 0,
         height: 2,
@@ -124,19 +132,19 @@ const makeStyles = (colors: Object) =>
       elevation: 2,
     },
     buttonOpen: {
-      backgroundColor: "#F194FF",
+      backgroundColor: '#F194FF',
     },
     buttonClose: {
-      backgroundColor: "#2196F3",
+      backgroundColor: '#2196F3',
     },
     textStyle: {
-      color: "white",
-      fontWeight: "bold",
-      textAlign: "center",
+      color: 'white',
+      fontWeight: 'bold',
+      textAlign: 'center',
     },
     text: { color: colors.text },
     modalText: {
       marginBottom: 15,
-      textAlign: "center",
+      textAlign: 'center',
     },
   });
